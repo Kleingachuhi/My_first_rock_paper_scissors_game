@@ -2,11 +2,12 @@ import random
 
 my_hand_can_be = ['Rock', 'Paper', 'Scissors']
 my_hand  = random.choice(my_hand_can_be)
-
+results = []
 while True:
     my_input = input('What do you have on your hand:')
     if my_input == my_hand:
         confirmatory_input =input("Are you sure?(y/n)")
+        results.append('Win')
         print("Congratulations You have won!")
         if confirmatory_input =='n':
             break
@@ -21,5 +22,9 @@ while True:
         elif just_confirming != 'y':
             print("Unfortunately invalid, try again.")
             break
+        results.append('Loss')
         print("Sorry try again!")
         break
+
+
+print(results)
